@@ -3,6 +3,9 @@
 # api文件夹
 提供接口数据的php文件
 # 界面效果
+## 首页
 ![Image text](https://github.com/1007426133/fuckmusic/blob/master/image/op1.png)
+## 歌曲列表
 ![Image text](https://github.com/1007426133/fuckmusic/blob/master/image/op2.png)
+## 试听播放及复制连接
 ![Image text](https://github.com/1007426133/fuckmusic/blob/master/image/op3.png)
