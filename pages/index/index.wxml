@@ -1,0 +1,162 @@
+<!--index.wxml-->
+
+<view class="container">
+
+  <view class="user">
+      <view style="width:250rpx;height:300rpx;">
+
+        <view>
+          <image src='{{imgurl}}' mode="aspectFill" style="max-width:250rpx;max-height:250rpx;border:1px solid #e7e7e7;"></image>
+        </view>
+        <view style="text-align:center;">
+        {{userName}}
+        </view>
+
+      </view>
+
+
+  </view>
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view style="display: flex;margin:100rpx 10rpx 20rpx;justify-content: center;">
+      <view style="width:25%">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{typeArray}}"  range-key="name" name="types">
+        <view class="picker" style="text-align:center;">
+          {{typeArray[index].name}}
+        </view>
+      </picker>
+    </view>
+
+    <view style="width:50%">
+    <input class="inputs" name="w" placeholder="{{serachStr}}" bindconfirm="formSubmit" />
+    </view>
+
+    <view style="width:25%">
+    <button formType="submit" class="sub" style="border-color:lightgray;border-style:solid;border-width:1px 1px 1px 0px;border-radius:0px 0px 0px 0px;">搜索</button>
+    </view>
+
+</view>
+</form>
+
+
+
+
+
+</view>
+
+<view wx:if="{{muiscList}}">
+
+<view class="lists" style="display: flex;margin:padding:20rpx 40rpx;margin:30rpx 0rpx;background-color: #f6f8f9;color: #8d8d8d;padding:30rpx 0rpx;text-align:center;">
+    <view style="width:37%">
+       歌曲
+    </view>
+      
+     <view style="width:15%">
+        作者
+     </view>
+
+      <view style="width:12%">
+        试听
+     </view>
+        
+      <view style="width:26%">
+        下载地址
+      </view>
+      
+  </view>
+
+  <view wx:for="{{muiscList}}" class="lists" style="display: flex;margin:20rpx 0rpx;padding:10rpx 40rpx;text-align:center;">
+    <view style="width:37%">
+       {{item.name}}
+    </view>
+      
+     <view style="width:15%"> 
+        {{item.author}}
+     </view>
+
+     <view style="width:12%;font-weight:bold;"> 
+       <view  bindtap="audition" style="color:#fff;background:#ef3b51;font-size:25rpx;padding:5rpx;" data-url='{{item.downurl}}' data-author='{{item.author}}' data-name='{{item.name}}' data-picurl='{{item.picurl}}'>试听</view>
+     </view>
+      
+        <view style="width:26%;color:#ef3b51;font-weight:bold;" bindtap="onclick" data-url="{{item.downurl}}">
+          复制链接
+        </view>
+      </view> 
+ 
+
+</view>
+
+
+<!--
+<view class="container">
+
+  <view class="page-body" style="justify-content:conten;">
+    <view class="section" style="margin:10px 10px;">
+      <image src='{{imgurl}}' mode="aspectFill" ></image> 
+    </view>
+    
+    
+      
+
+
+     
+
+ 
+  <view class="section">
+<form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="flex-wrp" style="flex-direction:row;display:flex;margin:0 10px;">
+    <!--
+      <view class="flex-item bc_green">
+        
+          <picker bindchange="bindPickerChange" value="{{index}}" name="types" range="{{array}}">
+          <view class="picker">
+            {{array[index]}}
+          </view>
+        </picker>
+        
+      </view>--><!--
+      <view class="flex-item bc_red" style="width:95%;">
+        <input class="inputs" name="shopname" placeholder="输入商品名称" bindconfirm="formSubmit"/>
+      </view>
+
+    </view>
+    </form> 
+  </view>
+
+
+
+
+ 
+  
+</view>
+
+
+<view style="width:100%;margin:10px 0px;">
+
+  <view class="wa-row">
+
+<block wx:for="{{datas}}" wx:key="*this" >
+    <view class="wa-col-50 border-basic" bindtap="navigateTo" data-id="{{index}}" data-cun="shouye">
+      <image src='{{item.pict_url}}' mode="aspectFill" style="max-width:100%;"></image>
+      <view style="font-size:12px;text-align:center;padding:0px 5px;overflow:hidden;max-height:30px;line-height:30px;color:#888;">
+        {{item.title}}
+      </view>
+      <view style="font-size:14px;padding:0px 5px 5px;">
+        <b style="color:#888;font-size:12px;">原</b>
+        <b style="color:#ef3b51;font-weight:bold;"> {{item.zk_final_price}}</b> 
+        <b style="color:#888;font-size:12px;"> 券</b>
+        <b style="color:#ef3b51;font-weight:bold;"> {{item.quan}} </b> 
+        <b style="color:#888;font-size:12px;">折后</b>
+        <b style="color:#ef3b51;font-weight:bold;"> {{item.zk_final_price - item.quan}}</b>
+      </view>
+    </view>
+
+</block>
+
+  </view>
+
+
+</view>
+
+
+</view>-->

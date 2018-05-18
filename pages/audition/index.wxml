@@ -1,0 +1,20 @@
+<!--index.wxml-->
+
+<view class="container">
+
+<view class="shiting">
+  <audio poster="{{musicInfo.picurl}}" name="{{musicInfo.name}}" author="{{musicInfo.author}}" src="{{musicInfo.url}}" id="myAudio" controls loop></audio>
+
+</view>
+
+<view class="wa-row" style="padding:0px;position: fixed;bottom: 0rpx;height:50px;">
+    <view class="wa-col-70" style="background:#fff;text-align:left;line-height:50px;font-size:12px;padding-left:20px;">
+      歌曲： <b style="color:#FF6537;font-size:16px;">{{musicInfo.name}}</b>
+      作者： <b style="color:#FF6537;font-size:16px;">{{musicInfo.author}}</b>
+  </view>
+
+  <view class="wa-col-30" style="background:#ef3b51;color:#fff;text-align:center;line-height:50px;font-size:16px;" bindtap="onclick"  data-url='{{musicInfo.url}}'>
+      复制连接
+  </view>
+</view>
+</view>

@@ -1,0 +1,7 @@
+/**index.wxss**/
+.shiting{
+  display: flex;
+  margin: 30rpx 10rpx;
+  justify-content: center;
+  flex-flow: row wrap;
+}
